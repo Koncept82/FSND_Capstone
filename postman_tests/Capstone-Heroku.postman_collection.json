@@ -1,0 +1,1022 @@
+{
+	"info": {
+		"_postman_id": "fdd925ed-c367-49a0-bd15-c1fb2d8ebc60",
+		"name": "Capstone-Heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Casting Asistant",
+			"item": [
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "45ba2dcc-d574-45a7-80e3-727cb27d12f0",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "972f347d-dc1a-4b36-aee2-dc7c0395f192",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "095cadba-bdf8-4e89-b924-515b47979480",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Iron man 3\",\n\t\"release_date\": \"29/01/2020\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movie",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f32e9db6-6eba-48ef-9c2b-9bd980075435",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Marcos\",\n\t\"gender\": \"Male\",\n\t\"movie_id\": \"1\",\n\t\"age\": \"20\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/actor",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actor/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4ee2dd6c-8bf8-4890-ab92-dcf5bfa668b2",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Marcos Maldonado\",\n\t\"gender\": \"Female\",\n\t\"movie_id\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/actor/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movie/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "93ee9a72-a72e-42a4-8416-94e72af77cf4",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Thor\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movie/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movie",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actor/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d711759f-b7ff-4f65-89d9-04bcb2ed8b9a",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actor/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movie/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4371be05-cbad-4bf1-8ed5-6e1addb23b89",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movie/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movie",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Inp0X2NkOVJINDdPYXBnWE5Dcl9JYyJ9.eyJpc3MiOiJodHRwczovL2Rldi02ZmM5OTd6NS5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWZiNmEyM2VjYjk5NmEwMDczNDM4ZmIyIiwiYXVkIjoiY2Fwc3RvbmUiLCJpYXQiOjE2MDU4MDUzOTIsImV4cCI6MTYwNTg5MTc5MiwiYXpwIjoiR0kxYTBQd2V0d3oyZExXWGE0djV5VDA2WUpWWDc4dGIiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIl19.NvTDXap1lG-cS_Ih5V2PGqFgAEL5Vw3qkmMymD7BnYj5tQZBR6x9tKkTrvuuuxWMkQqkliS8aWqKpvEkHyMCvhf8F9tQF7X2W-vBu3Sfe-wcdUB6JjvgkxQgjYhMqHJedPZRx1zoGPQZ_VzAXz-TEvNrxe9fqyIwzERceHlJgIEcfK_N84dhlX4yb4YxrfCDkaxOjr9soYr9lrvH2cYkKMjKdBuAATE9TY3p3MONwreS9VlmnBwNMdYhU1ZIiUXJF9aLGzJxFn8kl6Ct8HLpQkqzeuvs6MLVB7hnzDPU66z93auaBD8thq3aCkyY_yfu9ML0Z-4u1q6_4nSIBPPLVw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "469319a3-2f81-4b70-bed3-2779fb831140",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f0ea1ad1-32c6-487c-9345-1c35cd13f7e7",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Casting Producer",
+			"item": [
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0c4ab758-ffc2-4d93-afc7-9455c2c4f60f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "76b3bb63-8056-45da-9993-d20a5e922815",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cf187899-8c7a-494a-a8f6-77383146eb1d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"release_date\": \"Mon, 18 Nov 2020 01:01:00 GMT\",\n  \"title\": \"The Matrix 10\",\n  \"actor_id\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movie",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6c1523e6-8d0e-4685-b99c-4d6c7672c641",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"James Franco\",\n  \"gender\": \"male\",\n  \"age\": 38\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/actor",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actor/10",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d24b9598-faf0-4325-867c-e4e1ad60512d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Michael Fassbender\",\n  \"age\": 39,\n  \"gender\": \"male\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/actor/10",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actor",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movie/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9930fa75-273d-46f7-8e43-928008802e76",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"release_date\": \"Fri, 11 Jun 1999 01:01:00 GMT\",\n  \"title\": \"The Matrix\",\n  \"actor_id\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movie/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movie",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actor/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a4a6f3f1-ec69-47fe-a193-240f9373de75",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actor/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movie/5",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "34d756fa-d328-48eb-bc25-a4231116b913",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movie/5",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movie",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Inp0X2NkOVJINDdPYXBnWE5Dcl9JYyJ9.eyJpc3MiOiJodHRwczovL2Rldi02ZmM5OTd6NS5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWZiNmEyNjBhYTY3YjIwMDc1OTE1ZjE4IiwiYXVkIjoiY2Fwc3RvbmUiLCJpYXQiOjE2MDU4MDU0NjQsImV4cCI6MTYwNTg5MTg2NCwiYXpwIjoiR0kxYTBQd2V0d3oyZExXWGE0djV5VDA2WUpWWDc4dGIiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvciIsImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3IiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9yIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWUiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9yIiwicG9zdDphY3RvcnMiLCJwb3N0Om1vdmllIl19.T_pH_TuI6obUcJoutoStVqzHg5YerYcA60TbOH911yZ7ga8HfhJiaSZdS5SeDJduhDmjGYHyZIemcCZmzOa4IP5aujtHMUTxmrUeMrdasjx3spSabmsByAmMI5n_coWZp8afWj5PfIa2Xe-e0T3cItUfrWsm5pBND7_Jdil3-KeUdyAydLny1efOeC1ayOtpG5nvJDH0tusIIq-n6aIIfdP4gFSJooUUIcaKbo-zp4zSTP-K7DjiORtcSpbISIQP_E7u7Ua3cVSm7t8SKWv2Rog5Sr8OKvw59JRwlKJ-PdLK7ZEb0U7IDn3F4ELM1vslTfatCXsJWW1_LUUU-z9bBg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6e19971f-6728-475a-acd0-b9f520927f67",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e5c654e8-da39-4877-9734-c90d8de5e675",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Casting Director",
+			"item": [
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f5b8cb84-3812-4a1f-8a27-38e05abb2b59",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cae05880-818f-4313-bc7a-7403a82f635c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movies",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movie",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8098488a-c001-475a-bdd0-0276ba2a5d75",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"release_date\": \"Mon, 18 Nov 2008 01:01:00 GMT\",\n  \"title\": \"The Matrix 10\",\n  \"actor_id\": 11\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movie",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "da8c1664-69d5-4d3b-bd2b-3b368aa98ffb",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"James Franco\",\n  \"gender\": \"male\",\n  \"age\": 38\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/actor",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actor/2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "64166b31-dcee-4e8c-904f-146d897f74ee",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Chris Hemsworth\",\n  \"age\": 33,\n  \"gender\": \"male\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/actor/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actor",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movie/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "58d594b3-67e9-429d-9c5b-d333e29bf972",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"release_date\": \"Fri, 11 Jun 1999 01:01:00 GMT\",\n  \"title\": \"The Matrix\",\n  \"actor_id\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/movie/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movie",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actor/2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e0a1e17c-b2a5-4ee6-9926-8132cc96dd3b",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/actor/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"actor",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movie/1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "173d853f-7258-4177-b862-9d3c0fe8a61d",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movie/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movie",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Inp0X2NkOVJINDdPYXBnWE5Dcl9JYyJ9.eyJpc3MiOiJodHRwczovL2Rldi02ZmM5OTd6NS5ldS5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWZiNmEyNjBhYTY3YjIwMDc1OTE1ZjE4IiwiYXVkIjoiY2Fwc3RvbmUiLCJpYXQiOjE2MDU4MDU0MzUsImV4cCI6MTYwNTg5MTgzNSwiYXpwIjoiR0kxYTBQd2V0d3oyZExXWGE0djV5VDA2WUpWWDc4dGIiLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImRlbGV0ZTphY3RvciIsImRlbGV0ZTphY3RvcnMiLCJnZXQ6YWN0b3IiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9yIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWUiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9yIiwicG9zdDphY3RvcnMiLCJwb3N0Om1vdmllIl19.xq_7QgM6qewHH6Vs1gBTL40d0QoSMdJmbd_Yg62SmRiRYVqD4qa35AQ82FXcO6ApezJSQnk21oxwdQA00j9iFW2-oDmnHlLri_SzTeYbYG_WtbgfcVlD9HeCbO20m3H3ZVyjBzFC53a-gHuTuUeZZhBndBdRZOZtRm9JEykZ95rzjjxz0yh8lkXGynyGRg6snDUfwQfJzYogc8CwLWpTU8ubCRBtJZaZlLuvta84_4SJJWIzdqvRfYafDLRTA0dUeIF9cO3pSQ8mUBAWn8MqJ61kxcBt0RggQXuxynsLocd4FStypnpE4Y5uY3tgChQ8ai-eNOHB8n7Fnuk5k61pJw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "fc190fa9-59d2-4328-a31d-15923d14cf6a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "2296121a-a1d0-4f8e-8b8d-4deb8edd1ac4",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "bd0752a0-bf5d-4293-b090-ed1236a46da0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "02bbb367-b5e0-4d2a-84f1-050c8ec5df02",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "6cf5216f-5bc3-44fc-b4b0-d4e652cb96aa",
+			"key": "host",
+			"value": "https://capstone-fsnd-alf.herokuapp.com/"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
